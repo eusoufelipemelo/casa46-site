@@ -23,13 +23,6 @@ export const metadata: Metadata = pageMetadata({
   image: "/og/jp.jpg",
 });
 
-/** Números da página do Jônas no site anterior (diferentes dos da Home: ver pendências). */
-const JP_STATS = [
-  { value: "20+", label: "Anos de experiência no mercado" },
-  { value: "93%", label: "Índice de satisfação máxima" },
-  { value: "716+", label: "Clientes felizes, espaços transformados" },
-  { value: "11+", label: "Arquitetos, incorporadores e construtoras" },
-];
 
 export default function JpPage() {
   const top = photos["jp-topo"][0];
@@ -82,7 +75,7 @@ export default function JpPage() {
             </div>
           </div>
           <div className="mt-16">
-            <Stats items={JP_STATS} delay={600} />
+            <Stats items={siteConfig.about.facts} delay={600} />
           </div>
         </div>
       </section>

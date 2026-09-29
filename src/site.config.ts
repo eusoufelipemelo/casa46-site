@@ -17,12 +17,9 @@ export const brandFont = Inter({
 export type NavLink = { label: string; href: string };
 export type Service = { title: string; description: string };
 
-/** Links dos botões do site anterior (wa.link), mantidos como estavam. */
+/** Link dos botões "Contato" (wa.link do site anterior): um WhatsApp só, (11) 99435-1023. */
 export const links = {
-  /** (11) 99435-0664, usado em quase todos os botões "Contato". */
-  whatsapp: "https://wa.link/9q7v6t",
-  /** (11) 99435-1023, usado no botão "Contato" da página de projetos. */
-  whatsappProjetos: "https://wa.link/qxy2no",
+  whatsapp: "https://wa.link/qxy2no",
 };
 
 export const siteConfig = {
@@ -55,10 +52,10 @@ export const siteConfig = {
   ] satisfies NavLink[],
 
   contact: {
-    whatsapp: "5511994350664",
+    whatsapp: "5511994351023",
     whatsappMessage: "Olá, vim através do site da Casa46 e gostaria de mais informações...",
-    phone: "(11) 9 9435-0664",
-    phoneHref: "+5511994350664",
+    phone: "(11) 9 9435-1023",
+    phoneHref: "+5511994351023",
     email: "contato@casa46.com.br",
     address: {
       street: "Av. Brigadeiro Luís Antônio, 2543, conjunto 52",

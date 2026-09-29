@@ -21,14 +21,11 @@ export function SiteEffects() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const lenis = new Lenis({ duration: 1.2, smoothWheel: true, anchors: { offset: -90 } });
+    // lerp (interpolação por quadro) é mais estável que duração fixa: sem trancos quando a
+    // roda do mouse manda vários eventos seguidos. O toque no celular fica nativo.
+    const lenis = new Lenis({ lerp: 0.085, wheelMultiplier: 0.9, smoothWheel: true, syncTouch: false, anchors: { offset: -90 }, autoRaf: true });
     window.__lenis = lenis;
-    let frame = requestAnimationFrame(function raf(time) {
-      lenis.raf(time);
-      frame = requestAnimationFrame(raf);
-    });
     return () => {
-      cancelAnimationFrame(frame);
       lenis.destroy();
       window.__lenis = undefined;
     };
@@ -42,21 +39,23 @@ export function SiteEffects() {
     document.querySelectorAll("main h1:not([data-reveal]), main h2:not([data-reveal])").forEach((el) => {
       if (!el.closest("[data-reveal]")) el.setAttribute("data-reveal", "fade");
     });
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
-          e.target.setAttribute("data-revealed", "");
-          io.unobserve(e.target);
-        }
-      },
-      { rootMargin: "0px 0px -6% 0px", threshold: 0.08 },
-    );
-    document.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => io.observe(el));
+    const reveal = (entries: IntersectionObserverEntry[], obs: IntersectionObserver) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.setAttribute("data-revealed", "");
+        obs.unobserve(e.target);
+      }
+    };
+    // títulos: só sobem quando já estão bem dentro da tela (18% acima da borda de baixo),
+    // para o movimento acontecer onde a pessoa está olhando
+    const words = new IntersectionObserver(reveal, { rootMargin: "0px 0px -18% 0px", threshold: 0 });
+    const rest = new IntersectionObserver(reveal, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    document.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => (el.getAttribute("data-reveal") === "words" ? words : rest).observe(el));
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener("load", onLoad);
-      io.disconnect();
+      words.disconnect();
+      rest.disconnect();
     };
   }, [pathname]);
 

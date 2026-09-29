@@ -36,6 +36,6 @@ export const faq = [
   {
     question: "Onde fica a Casa 46 e como pedir um orçamento?",
     answer:
-      "A Casa 46 fica na Av. Brigadeiro Luís Antônio, 2543, conjunto 52, Jardim Paulista, São Paulo (SP). O contato é pelo WhatsApp (11) 9 9435-0664, pelo e-mail contato@casa46.com.br ou pelo formulário do site.",
+      "A Casa 46 fica na Av. Brigadeiro Luís Antônio, 2543, conjunto 52, Jardim Paulista, São Paulo (SP). O contato é pelo WhatsApp (11) 9 9435-1023, pelo e-mail contato@casa46.com.br ou pelo formulário do site.",
   },
 ];

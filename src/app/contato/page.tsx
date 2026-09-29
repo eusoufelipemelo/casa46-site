@@ -9,7 +9,7 @@ import { photos } from "@/content/fotos";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contato",
-  description: "Fale com a Casa 46: WhatsApp (11) 9 9435-0664, contato@casa46.com.br, Av. Brigadeiro Luís Antônio, 2543, Jardim Paulista, São Paulo.",
+  description: "Fale com a Casa 46: WhatsApp (11) 9 9435-1023, contato@casa46.com.br, Av. Brigadeiro Luís Antônio, 2543, Jardim Paulista, São Paulo.",
   path: "/contato",
 });
 

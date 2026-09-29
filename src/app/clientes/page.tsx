@@ -6,6 +6,7 @@ import { FounderSection } from "@/components/FounderSection";
 import { StarIcon } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
+import { SplitTitle } from "@/components/SplitTitle";
 import { Tag } from "@/components/ui";
 import { photos } from "@/content/fotos";
 import { fromCover, projects } from "@/content/projetos";
@@ -87,9 +88,7 @@ export default function ClientesPage() {
                     <p className="text-[0.85rem] tabular-nums text-muted" data-reveal="fade">
                       {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
                     </p>
-                    <h2 id={`${p.slug}-titulo`} className="display mt-1 text-[2.2rem] text-ink sm:text-[3rem]">
-                      {p.title}
-                    </h2>
+                    <SplitTitle id={`${p.slug}-titulo`} text={p.title} className="display mt-1 text-[2.2rem] text-ink sm:text-[3rem]" />
                   </div>
                   <p className="text-[0.95rem] text-muted" data-reveal="fade" style={{ "--d": "150ms" } as CSSProperties}>
                     {p.photos.length} fotos
@@ -108,7 +107,7 @@ export default function ClientesPage() {
           </div>
 
           <div className="mt-20 flex justify-center">
-            <a href={links.whatsappProjetos} target="_blank" rel="noopener" className="btn btn-primary min-w-44">
+            <a href={links.whatsapp} target="_blank" rel="noopener" className="btn btn-primary min-w-44">
               Contato
             </a>
           </div>

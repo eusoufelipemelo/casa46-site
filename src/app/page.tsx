@@ -145,7 +145,7 @@ export default async function HomePage() {
                       <p className="text-[0.85rem] tabular-nums text-white/65">
                         {String(i + 1).padStart(2, "0")} / {String(homeProjects.length).padStart(2, "0")}
                       </p>
-                      <h3 className="display mt-1 text-[2rem] sm:text-[3rem]">{p.title}</h3>
+                      <SplitTitle as="h3" text={p.title} className="display mt-1 text-[2rem] sm:text-[3rem]" />
                     </>
                   }
                 />
@@ -166,9 +166,7 @@ export default async function HomePage() {
       {/* ---------------------------------------------------- Excelência e experiências únicas */}
       <section aria-labelledby="excelencia-titulo" className="relative overflow-hidden bg-white pb-6 pt-20 sm:pt-28">
         <div className="wrap text-center">
-          <h2 id="excelencia-titulo" data-reveal="fade" className="display mx-auto max-w-[20ch] text-[2.2rem] text-ink sm:text-[3.1rem]">
-            Excelência e <span className="text-[#747474]">experiências únicas</span>, <span className="text-[#747474]">para quem</span> exige o melhor
-          </h2>
+          <SplitTitle id="excelencia-titulo" text="Excelência e {experiências únicas}, {para quem} exige o melhor" className="display mx-auto max-w-[20ch] text-[2.2rem] text-ink sm:text-[3.1rem]" />
           <div data-reveal="fade" style={{ "--d": "200ms" } as CSSProperties} className="mt-8">
             <a href="#proposito" className="btn btn-primary">
               Conhecer a Casa 46
@@ -191,9 +189,7 @@ export default async function HomePage() {
         <div className="wrap flex lg:min-h-[56rem] lg:items-center lg:justify-end">
           <div data-reveal="fade" className="w-full max-w-[29rem] rounded-[18px] bg-white p-6 shadow-[0_40px_80px_-40px_rgb(0_0_0/0.6)] sm:p-9">
             <Tag icon={EyeIcon}>Nossos diferenciais</Tag>
-            <h2 id="diferenciais-titulo" className="mt-5 text-[1.8rem] font-semibold leading-tight tracking-[-0.025em] text-black">
-              O que nos torna diferentes?
-            </h2>
+            <SplitTitle id="diferenciais-titulo" text="O que nos torna diferentes?" className="mt-5 text-[1.8rem] font-semibold leading-tight tracking-[-0.025em] text-black" />
             <div className="mt-6 divide-y divide-line border-t border-line">
               {DIFFERENTIALS.map((d, i) => (
                 <details key={d.title} className="faq-item group" open={i === 0}>
@@ -293,9 +289,7 @@ export default async function HomePage() {
           <div data-reveal="fade" className="relative grid gap-6 rounded-[14px] bg-surface p-7 sm:p-10 md:grid-cols-12 md:items-center">
             <div className="md:col-span-5">
               <Tag icon={EyeIcon}>Nossa visão</Tag>
-              <h2 id="visao-titulo" className="mt-4 text-[1.6rem] font-semibold tracking-[-0.025em] text-black">
-                Doutores da marcenaria
-              </h2>
+              <SplitTitle id="visao-titulo" text="Doutores da marcenaria" className="mt-4 text-[1.6rem] font-semibold tracking-[-0.025em] text-black" />
             </div>
             <div className="space-y-3 text-[1.02rem] font-medium leading-relaxed text-ink md:col-span-7">
               <p>Nos consideramos doutores da marcenaria, pois dominamos a arte da marcenaria fina, valorizando cada detalhe e a exclusividade que ela proporciona.</p>
