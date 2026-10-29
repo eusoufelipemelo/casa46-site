@@ -66,6 +66,8 @@ export const siteConfig = {
       country: "BR",
     },
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Av.+Brigadeiro+Lu%C3%ADs+Ant%C3%B4nio%2C+2543%2C+S%C3%A3o+Paulo+-+SP",
+    /** Posição do Edifício Quazar (Av. Brigadeiro Luís Antônio, 2543), no OpenStreetMap. */
+    geo: { lat: -23.5697522, lng: -46.6506459 },
     /** O site anterior não informa horário: fica vazio e some da tela. */
     hours: "",
     openingHoursSpec: [] as string[],

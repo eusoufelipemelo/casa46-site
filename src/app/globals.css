@@ -604,6 +604,61 @@
     }
   }
 
+  /*
+   * Mapa da localização: o mapa claro do OpenFreeMap invertido em tons de grafite, para
+   * conversar com o preto do site. O marcador fica fora do canvas e mantém as cores.
+   */
+  .map-canvas .maplibregl-canvas {
+    filter: invert(1) hue-rotate(180deg) grayscale(1) brightness(0.92) contrast(0.92);
+  }
+  .map-canvas .maplibregl-ctrl-group {
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 22px -12px rgb(0 0 0 / 0.6);
+  }
+  .map-canvas .maplibregl-ctrl-attrib {
+    font-size: 11px;
+  }
+  .c46-pin {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+  }
+  .c46-pin img {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border: 3px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 10px 24px -6px rgb(0 0 0 / 0.6);
+  }
+  .c46-pin-halo {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--signal) 55%, transparent);
+    animation: pin-pulse 2.4s ease-out infinite;
+  }
+  @keyframes pin-pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(2.2);
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .c46-pin-halo {
+      animation: none;
+      opacity: 0.4;
+    }
+  }
+
   /* Marcadores do formulário */
   .chip-input:checked + span {
     background: #000;

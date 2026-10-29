@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { CSSProperties } from "react";
 import { CookieNotice } from "@/components/CookieNotice";
 import { JsonLd } from "@/components/JsonLd";
+import { LocationSection } from "@/components/LocationSection";
 import { SiteEffects } from "@/components/SiteEffects";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="conteudo" className="flex-1">
           {children}
         </main>
+        <LocationSection />
         <SiteFooter />
         <WhatsAppFloat />
         <CookieNotice />
