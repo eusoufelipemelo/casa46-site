@@ -28,7 +28,7 @@ export const siteConfig = {
   cnpj: "23.891.152/0001-27",
   tagline: "Desafios nos movem, segurança nos define.",
   description:
-    "Marcenaria fina e móveis sob medida em São Paulo para residências, escritórios, hotelaria e construtoras. Fundada por Jônas Pastore, os Doutores da Marcenaria.",
+    "Marcenaria fina e móveis planejados sob medida em São Paulo (SP). Showroom no Jardim Paulista, atendendo Jardins, Itaim Bibi, Moema, Pinheiros e todo o Brasil.",
   /** Domínio de produção, sem barra no fim. A variável SITE_URL tem prioridade. */
   url: "https://www.casa46.com.br",
   locale: "pt_BR",
@@ -68,10 +68,10 @@ export const siteConfig = {
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Av.+Brigadeiro+Lu%C3%ADs+Ant%C3%B4nio%2C+2543%2C+S%C3%A3o+Paulo+-+SP",
     /** Posição do Edifício Quazar (Av. Brigadeiro Luís Antônio, 2543), no OpenStreetMap. */
     geo: { lat: -23.5697522, lng: -46.6506459 },
-    /** O site anterior não informa horário: fica vazio e some da tela. */
-    hours: "",
-    openingHoursSpec: [] as string[],
-    areaServed: "São Paulo e todo o Brasil",
+    /** Horário do Perfil da Empresa no Google (conferido em 23/11/2026). */
+    hours: "Segunda a sexta, das 10h às 18h",
+    openingHoursSpec: ["Mo-Fr 10:00-18:00"] as string[],
+    areaServed: "São Paulo (SP) e todo o Brasil",
   },
 
   social: [

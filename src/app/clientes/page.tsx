@@ -16,7 +16,7 @@ import { pageMetadata } from "@/lib/seo";
 import { links } from "@/site.config";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Projetos de marcenaria fina com arquitetos parceiros",
+  title: "Projetos de marcenaria em São Paulo (SP) com arquitetos parceiros",
   description:
     "Projetos da Casa 46 com Atelier Peclat, Athie Wohnrath, Luís Renato Machado, Bossa Arquitetura e o Restaurante Song Qi, em marcenaria fina sob medida.",
   path: "/clientes",

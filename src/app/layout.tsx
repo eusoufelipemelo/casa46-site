@@ -16,10 +16,10 @@ import "./globals.css";
 export function generateMetadata(): Metadata {
   return {
     metadataBase: new URL(siteUrl()),
-    title: { default: `Marcenaria fina e móveis sob medida em São Paulo | ${siteConfig.name}`, template: `%s | ${siteConfig.name}` },
+    title: { default: `Marcenaria em São Paulo (SP) e móveis planejados | ${siteConfig.name}`, template: `%s | ${siteConfig.name}` },
     description: siteConfig.description,
     applicationName: siteConfig.name,
-    keywords: ["Casa 46", "marcenaria fina", "móveis sob medida", "móveis planejados", "marcenaria em São Paulo", "lâmina de madeira natural", "Jônas Pastore", "Doutores da Marcenaria"],
+    keywords: ["Casa 46", "marcenaria em São Paulo", "marcenaria fina", "painel ripado", "móveis sob medida", "móveis planejados", "marcenaria em São Paulo", "lâmina de madeira natural", "Jônas Pastore", "Doutores da Marcenaria"],
     // canonical fica em cada página (herdar "/" daqui faria todas apontarem para a Home)
     alternates: {
       types: { "application/rss+xml": [{ url: "/feed.xml", title: `${siteConfig.name}: blog` }] },

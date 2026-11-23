@@ -11,7 +11,7 @@ import { organizationId } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Showroom de marcenaria fina em São Paulo",
+  title: "Showroom de marcenaria em São Paulo (SP), no Jardim Paulista",
   description:
     "Veja o showroom da Casa 46: cozinhas em madeira natural, ilhas de mármore, móveis curvos e o banco escultural de ripas, executados em marcenaria fina.",
   path: "/showroom",

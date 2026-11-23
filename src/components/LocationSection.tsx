@@ -1,4 +1,6 @@
 import { organizationId } from "@/lib/jsonld";
+import { ROTA_REGIAO, areaServedJsonLd } from "@/lib/regiao";
+import Link from "next/link";
 import { siteConfig } from "@/site.config";
 import { CopyAddress } from "./CopyAddress";
 import { PinIcon } from "./icons";
@@ -27,7 +29,25 @@ export function LocationSection() {
 
   return (
     <section id="localizacao" aria-labelledby="localizacao-titulo" className="relative isolate scroll-mt-16 bg-black text-white">
-      <JsonLd data={{ "@context": "https://schema.org", "@id": organizationId(), geo: { "@type": "GeoCoordinates", latitude: lat, longitude: lng }, hasMap: c.mapsUrl }} />
+      {/* complementa o nó da empresa (mesmo @id) com o que o SEO local pede: geo, mapa, CNPJ,
+          horário e as áreas atendidas de regiao.ts */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": ["HomeAndConstructionBusiness", "FurnitureStore"],
+          "@id": organizationId(),
+          name: siteConfig.name,
+          taxID: siteConfig.cnpj,
+          telephone: c.phoneHref,
+          geo: { "@type": "GeoCoordinates", latitude: lat, longitude: lng },
+          hasMap: c.mapsUrl,
+          areaServed: areaServedJsonLd(),
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "10:00", closes: "18:00" },
+          ],
+          contactPoint: { "@type": "ContactPoint", telephone: c.phoneHref, contactType: "customer service", areaServed: "BR", availableLanguage: "Portuguese" },
+        }}
+      />
       <div className="relative h-[60svh] min-h-[22rem] md:h-[40rem]">
         <LocationMap lat={lat} lng={lng} label={`Casa 46: ${full}`} />
         {/* véu à esquerda no computador, para o cartão respirar sobre o mapa */}
@@ -45,6 +65,10 @@ export function LocationSection() {
             <br />
             CEP {a.postalCode}
           </address>
+          {c.hours ? <p className="mt-2 text-[0.92rem] text-muted">{c.hours}</p> : null}
+          <Link href={ROTA_REGIAO} className="link mt-3 inline-block text-[0.92rem] font-medium text-ink">
+            Bairros atendidos em São Paulo
+          </Link>
 
           <p className="mt-6 text-[0.85rem] font-medium text-ink">Traçar rota pelo</p>
           <ul className="mt-2 grid grid-cols-2 gap-2">

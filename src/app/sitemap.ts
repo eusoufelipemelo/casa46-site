@@ -18,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: absoluteUrl("/"), changeFrequency: "weekly", priority: 1 },
     // Páginas da Casa 46 (mesmos endereços do site anterior). /servicos e /sobre do modelo
     // redirecionam para /clientes e /jp, por isso não entram aqui.
+    { url: absoluteUrl("/marcenaria-sao-paulo"), changeFrequency: "monthly", priority: 0.9 },
     { url: absoluteUrl("/clientes"), changeFrequency: "monthly", priority: 0.9, images: projects.flatMap((p) => p.photos.slice(0, 3).map((f) => absoluteUrl(f.src))) },
     { url: absoluteUrl("/jp"), changeFrequency: "monthly", priority: 0.8, images: photos["jonas-pastore-trajetoria"].map((f) => absoluteUrl(f.src)) },
     { url: absoluteUrl("/showroom"), changeFrequency: "monthly", priority: 0.8, images: photos.showroom.map((f) => absoluteUrl(f.src)) },

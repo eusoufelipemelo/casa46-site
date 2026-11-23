@@ -46,7 +46,8 @@ export function CountUp({ value, duration = 2200, delay = 0, className = "" }: {
     return n.includes(".") ? v.toLocaleString("pt-BR") : String(v);
   });
   return (
-    <span ref={ref} className={className} aria-label={value}>
+    <span ref={ref} className={className}>
+      <span className="sr-only">{value}</span>
       <span aria-hidden>{text}</span>
     </span>
   );

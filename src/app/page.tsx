@@ -27,12 +27,12 @@ export const revalidate = 300;
 
 export const metadata: Metadata = {
   ...pageMetadata({
-    title: "Marcenaria fina e móveis sob medida em São Paulo",
+    title: "Marcenaria em São Paulo (SP) e móveis planejados",
     description: siteConfig.description,
     path: "/",
     image: "/og/casa46.jpg",
   }),
-  title: { absolute: `Marcenaria fina e móveis sob medida em São Paulo | ${siteConfig.name}` },
+  title: { absolute: `Marcenaria em São Paulo (SP) e móveis planejados | ${siteConfig.name}` },
 };
 
 const DIFFERENTIALS = [
@@ -61,7 +61,7 @@ export default async function HomePage() {
           "@type": "WebPage",
           "@id": `${absoluteUrl("/")}#webpage`,
           url: absoluteUrl("/"),
-          name: `Marcenaria fina e móveis sob medida em São Paulo | ${siteConfig.name}`,
+          name: `Marcenaria em São Paulo (SP) e móveis planejados | ${siteConfig.name}`,
           about: { "@id": organizationId() },
           primaryImageOfPage: absoluteUrl(hero.src),
           mainEntity: {
@@ -241,10 +241,9 @@ export default async function HomePage() {
 
       {/* --------------------------------------------------- O propósito por trás de cada projeto */}
       <section id="proposito" aria-labelledby="proposito-titulo" className="relative isolate scroll-mt-16 overflow-hidden bg-black text-white">
-        {/* o "46" do logo em traço, como marca d'água */}
-        <div aria-hidden className="pointer-events-none absolute -left-8 top-10 -z-10 select-none text-[22rem] font-extralight leading-none tracking-[-0.06em] text-white/[0.035] sm:text-[34rem]">
-          46
-        </div>
+        {/* o "46" do logo em traço, como marca d'água. Em ::before (fora da árvore de
+            acessibilidade): texto quase transparente não reprova o teste de contraste */}
+        <div aria-hidden className="pointer-events-none absolute -left-8 top-10 -z-10 select-none text-[22rem] font-extralight leading-none tracking-[-0.06em] text-white/[0.035] before:content-['46'] sm:text-[34rem]" />
         <div className="wrap grid items-center gap-12 py-20 sm:py-28 md:grid-cols-12">
           <div className="md:col-span-6">
             <Tag icon={CompassIcon} tone="light">

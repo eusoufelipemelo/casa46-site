@@ -11,9 +11,9 @@ import { organizationId } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Inspirações de marcenaria fina e móveis sob medida",
+  title: "Inspirações de marcenaria: painel ripado e lâmina natural",
   description:
-    "Galeria de inspirações da Casa 46: painéis em lâmina de madeira natural, forros de madeira, portas embutidas e móveis sob medida em projetos reais.",
+    "Inspirações da Casa 46 em São Paulo: painel ripado, lâmina de madeira natural, forros de madeira, portas embutidas e móveis planejados em projetos reais.",
   path: "/inspiracoes",
   image: "/og/inspiracoes.jpg",
 });

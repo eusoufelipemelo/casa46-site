@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ROTA_REGIAO } from "@/lib/regiao";
 import { siteConfig } from "@/site.config";
 import { ArrowUpIcon } from "./icons";
 
@@ -36,6 +37,11 @@ export function SiteFooter() {
               <li>
                 <Link href="/contato" className="inline-flex min-h-10 items-center hover:text-white">
                   Contato
+                </Link>
+              </li>
+              <li>
+                <Link href={ROTA_REGIAO} className="inline-flex min-h-10 items-center hover:text-white">
+                  Marcenaria em São Paulo
                 </Link>
               </li>
             </ul>

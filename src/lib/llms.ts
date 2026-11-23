@@ -35,6 +35,7 @@ export function fallbackLlms(posts: PostSummary[], full: boolean): string {
   ];
   // Casa 46: páginas próprias, projetos e perguntas frequentes (acréscimo ao modelo).
   lines.push(
+    `- [Marcenaria em São Paulo (SP)](${absoluteUrl("/marcenaria-sao-paulo")}): showroom no Jardim Paulista; bairros e cidades atendidos`,
     `- [Projetos](${absoluteUrl("/clientes")}): ${projects.map((p) => p.title).join(", ")}`,
     `- [Jônas Pastore](${absoluteUrl("/jp")}): fundador da Casa 46`,
     `- [Showroom](${absoluteUrl("/showroom")}): fotos do showroom da Casa 46`,

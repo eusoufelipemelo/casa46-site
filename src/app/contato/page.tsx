@@ -8,8 +8,8 @@ import { pageMetadata } from "@/lib/seo";
 import { photos } from "@/content/fotos";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Contato",
-  description: "Fale com a Casa 46: WhatsApp (11) 9 9435-1023, contato@casa46.com.br, Av. Brigadeiro Luís Antônio, 2543, Jardim Paulista, São Paulo.",
+  title: "Contato da marcenaria em São Paulo (SP)",
+  description: "Fale com a Casa 46: WhatsApp (11) 9 9435-1023, contato@casa46.com.br. Showroom na Av. Brigadeiro Luís Antônio, 2543, Jardim Paulista, São Paulo (SP), de segunda a sexta, das 10h às 18h.",
   path: "/contato",
 });
 
