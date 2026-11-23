@@ -13,7 +13,8 @@
  * Os 3 primeiros do mapa em "marcenaria são paulo" usam a categoria "Marceneiro".
  *
  * Bairros: os de alto padrão mais próximos do showroom; cidades: Grande SP com esse público.
- * Devem ser as mesmas 20 áreas de atendimento do Perfil da Empresa. Editar aqui muda o site.
+ * São as mesmas 20 áreas de atendimento do Perfil da Empresa (23/11/2026): estas 19 + a cidade de São Paulo,
+ * que entra em areaServedJsonLd. Editar aqui muda o site; mudar no Perfil também.
  */
 
 export const SEDE = { bairro: "Jardim Paulista", cidade: "São Paulo", uf: "SP", estado: "São Paulo" } as const;
@@ -27,8 +28,7 @@ export type Area = { nome: string; grupo: "Sede" | "Vizinhança" | "Zona Oeste e
 /** Áreas atendidas, da mais próxima do showroom para a mais distante. */
 export const AREAS: Area[] = [
   { nome: "Jardim Paulista", grupo: "Sede", tipo: "bairro" },
-  { nome: "Jardim Europa", grupo: "Vizinhança", tipo: "bairro" },
-  { nome: "Jardim América", grupo: "Vizinhança", tipo: "bairro" },
+  { nome: "Jardins", grupo: "Vizinhança", tipo: "bairro" },
   { nome: "Paraíso", grupo: "Vizinhança", tipo: "bairro" },
   { nome: "Vila Mariana", grupo: "Vizinhança", tipo: "bairro" },
   { nome: "Higienópolis", grupo: "Vizinhança", tipo: "bairro" },
